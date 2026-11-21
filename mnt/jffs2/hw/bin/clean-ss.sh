@@ -1,5 +1,0 @@
-#!/bin/sh
-
-iptables -t nat -F SHADOWSOCKS
-
-exit 0
