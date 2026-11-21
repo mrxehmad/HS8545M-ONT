@@ -2,12 +2,12 @@
 
 **Persistent root shell + boot-time app autostart on Huawei / HiSilicon Dopra Linux GPON & EPON ONTs (光猫).**
 Prebuilt `getshell` kernel modules, allShell (补全shell) patches, and the classic enable/config tools — with a fully documented, **reversible** injection technique that needs **no firmware downgrade** and **no boardinfo edit**.
-
+> ⚠️ **Use at your own risk.** Modifying your ONT can brick it or void your warranty. Back up your config and have a recovery method ready before you proceed.
 > Repo: <https://github.com/mrxehmad/HS8545M-ONT>
 
 ---
 
-## ⚡ Verified working
+## Verified working
 
 | Model | Carrier | Firmware | Kernel | Module |
 |---|---|---|---|---|
