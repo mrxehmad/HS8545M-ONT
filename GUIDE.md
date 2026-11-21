@@ -1,10 +1,20 @@
 # Guide For R019 and R020
 
-```
-device hi_sysctl.ko : vermagic=3.10.53-HULK2 SMP mod_unload modversions ARMv7
-your getshell.ko    : vermagic=3.10.53-HULK2 SMP mod_unload modversions ARMv7
-```
 
+
+
+```
+strings getshell.ko | grep vermagic    # must equal the device string
+device hi_sysctl.ko : vermagic=3.10.53-HULK2 SMP mod_unload modversions ARMv7
+your getshell.ko    : vermagic=3.10.53-HULK2 SMP mod_unload modversions ARMv7 or R020
+```
+### Prechecks
+
+```
+cat  /mnt/jffs2/hw_boardinfo
+# this value must be 4
+obj.id = "0x00000001" ; obj.value = "4";
+```
 
 ## 0. Put the module on the ONT
 
