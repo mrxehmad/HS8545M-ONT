@@ -1,0 +1,50 @@
+# Normalize text files; keep binaries untouched
+* text=auto
+
+# Docs / config / scripts → LF
+*.md   text
+*.txt  text
+*.sh   text eol=lf
+*.json text eol=lf
+*.toml text eol=lf
+*.yaml text eol=lf
+*.yml  text eol=lf
+*.cfg  text eol=lf
+*.conf text eol=lf
+
+# Windows scripts → CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binaries — never diff/merge/convert
+*.ko  binary
+*.exe binary
+*.bin binary
+*.dll binary
+*.so  binary
+*.a   binary
+*.o   binary
+*.img binary
+*.trx binary
+*.cpk binary
+*.ipk binary
+*.squashfs binary
+*.zip binary
+*.rar binary
+*.7z  binary
+*.gz  binary
+*.tar binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+
+# Keep GitHub language stats honest
+allshell/tools/** linguist-vendored
+*.ko linguist-detectable=false
+ARTICLE.md linguist-documentation
+GUIDE.md linguist-documentation
+
+.gitattributes text
+.gitignore text
