@@ -3,7 +3,20 @@
 *Turning an ISP‑locked GPON ONT into a tiny, always‑on Linux server using a kernel‑module injection into the stock boot flow.*
 
 ---
-
+> **Scope update:** This write-up was produced on an **HS8545M5 (V5R020, kernel 4.4.197, musl)**.
+> The identical technique was then verified on an **HG8546M (V5R019C10S125, kernel 3.10.53-HULK2)**:
+>
+> | | HS8545M5 | HG8546M |
+> |---|---|---|
+> | Kernel | 4.4.197 | 3.10.53-HULK2 |
+> | vermagic | `4.4.197 SMP mod_unload ARMv7` | `3.10.53-HULK2 SMP mod_unload modversions ARMv7` |
+> | TranStar hook | line 345 | line 114 |
+> | PON insmod | lines 469–472 | lines 172–173 |
+> | Sacrificial module (GPON) | `hi_epon.ko` | `hi_epon.ko` |
+>
+> On the HG8546M, `modversions` is enabled, so **symbol CRCs are checked** — always do the manual
+> `insmod` test before wiring into boot. Match the module's vermagic to
+> `strings /lib/modules/hisi_sdk/hi_sysctl.ko | grep vermagic` exactly (including `-HULK2`).
 ## Abstract
 
 The Huawei HS8545M5 is a mass‑deployed China Mobile GPON/EPON ONT. Like most carrier CPE, it ships with a locked‑down userspace, a remote‑management daemon (TR‑069) that can overwrite your changes, and no supported way to run your own software. This article documents a complete, **reboot‑persistent** method to execute arbitrary code as root at boot on firmware **V5R020C00S200** — *without* downgrading to R019, *without* editing the encrypted‑looking `hw_boardinfo`, and *without* replacing any module the active PON line depends on.
