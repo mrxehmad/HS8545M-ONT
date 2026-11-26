@@ -63,7 +63,7 @@ Edge / home-gateway ONTs:
 `K662C` `K662D` `K662E`
 
 ### Unsuccessful Devices upon testing
-`HS8145C5`
+[HS8145C5](WARNING_HS8145C5.md)
 
 ### ⚠️ Different architecture — NOT this exploit
 Newer **OptiXstar** units (`V173` `V271` `V273` `HG8245X6` `HN8145XR` `HN8145X6` `HN8145X6N` `HN8546X6`, firmware **R021/R022/R023**, kernel **5.10**, `whwh` signed images) use a different plugin framework (`eaiapp` / `cplugin`) and signed firmware. See the credits for the projects that cover those.
