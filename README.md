@@ -43,12 +43,12 @@ The `getshell` module's only job: on `insmod`, run `/mnt/jffs2/hw/getshell.sh` *
 
 **Important:** the two prebuilt `.ko` files are **kernel-version-specific** (vermagic must match exactly). The **TranStar technique** and the **allShell patches**, however, apply across the whole **HiSilicon SD511x / Dopra Linux** ONT family. For any other model, build `getshell.ko` against its exact kernel (see ARTICLE.md) or use the matching allShell patch.
 
-### Same SDK family — technique applicable (build a matching module / use allShell)
+### Same SDK family — technique applicable (Not Tested)
 EchoLife **HG** series:
-`HG8010` `HG8010H` `HG8012H` `HG8120C` `HG8120H` `HG8240` `HG8240H` `HG8240H5` `HG8245` `HG8245A` `HG8245C` `HG8245H` `HG8245H5` `HG8245Q` `HG8245Q2` `HG8245W5` `HG8245W5-6T` `HG8247` `HG8247H` `HG8247W5` `HG8310M` `HG8321R` `HG8540M` `HG8546M`
+`HG8010` `HG8010H` `HG8012H` `HG8120C` `HG8120H` `HG8240` `HG8240H` `HG8240H5` `HG8245` `HG8245A` `HG8245C` `HG8245H` `HG8245H5` `HG8245Q` `HG8245Q2` `HG8245W5` `HG8245W5-6T` `HG8247` `HG8247H` `HG8247W5` `HG8310M` `HG8321R` `HG8540M` 
 
 China-carrier **HS** series (CMCC / Telecom / Unicom):
-`HS8145C` `HS8145V` `HS8145C5` `HS8145V5` `HS8145V6` `HS8346V` `HS8545M` `HS8545M5` `HS8546V` `HS8546V5`
+`HS8145C` `HS8145V` `HS8145V5` `HS8145V6` `HS8346V` `HS8545M` `HS8546V` `HS8546V5`
 
 **EG** enterprise series:
 `EG8040H` `EG8141A5` `EG8145V5` `EG8245H` `EG8245H5` `EG8247W5`
@@ -61,6 +61,9 @@ SFP ONT sticks:
 
 Edge / home-gateway ONTs:
 `K662C` `K662D` `K662E`
+
+### Unsuccessful Devices upon testing
+`HS8145C5`
 
 ### ⚠️ Different architecture — NOT this exploit
 Newer **OptiXstar** units (`V173` `V271` `V273` `HG8245X6` `HN8145XR` `HN8145X6` `HN8145X6N` `HN8546X6`, firmware **R021/R022/R023**, kernel **5.10**, `whwh` signed images) use a different plugin framework (`eaiapp` / `cplugin`) and signed firmware. See the credits for the projects that cover those.
